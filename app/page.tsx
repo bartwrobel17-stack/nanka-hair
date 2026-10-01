@@ -1,0 +1,18 @@
+const services=[
+  ["Strzyżenie damskie","od 80 zł"],["Koloryzacja","od 180 zł"],["Modelowanie","od 60 zł"],
+  ["Upięcia","od 120 zł"],["Pielęgnacja włosów","od 90 zł"],["Konsultacja","bezpłatna"]
+];
+const reviews=[
+ ["Jolanta Hytroś","Jestem bardzo zadowolona z nowej fryzury. Fajna atmosfera w salonie i super usługa."],
+ ["Emilka Wójcik","Jestem bardzo zadowolona z przebiegu całej wizyty. Profesjonalne podejście i świetne doradztwo."],
+ ["Katarzyna N","Miejsce pełne pasji, zaangażowania i prawdziwej miłości do zawodu. Z całego serca polecam."]
+];
+export default function Home(){
+ return <><header><div className="wrap nav"><a className="brand" href="#">Nanka <small>Hair Studio</small></a><nav><a href="#studio">Studio</a><a href="#uslugi">Usługi</a><a href="#opinie">Opinie</a><a href="#kontakt">Kontakt</a></nav><a className="book" href="https://booksy.com/pl-pl/rwg/287305_nanka-hair-studio_fryzjer_10095_gdow" target="_blank">REZERWUJ</a></div></header>
+ <main><section className="hero"><div className="wrap" style={{paddingRight:0}}><div className="eyebrow">Bilczyce · Małopolska</div><h1>Twoje włosy.<br/>Twoja historia.</h1><p className="lead">Nanka Hair Studio to kameralny salon, w którym fryzura spotyka się z indywidualnym podejściem, spokojem i pasją.</p><div className="heroActions"><a className="book" href="https://booksy.com/pl-pl/rwg/287305_nanka-hair-studio_fryzjer_10095_gdow" target="_blank">UMÓW WIZYTĘ</a><a className="outline" href="#uslugi">ZOBACZ USŁUGI</a></div></div><div className="heroPhoto" aria-label="Zdjęcie salonu"/></section>
+ <section id="studio"><div className="wrap aboutGrid"><div><div className="eyebrow">O studio</div><h2>Miejsce stworzone z myślą o Tobie.</h2><p className="lead">W Nanka Hair Studio liczy się nie tylko efekt końcowy. Każda wizyta zaczyna się od rozmowy, poznania potrzeb i dobrania rozwiązania, które pasuje właśnie do Ciebie.</p><div className="stats"><div className="stat"><b>5.0</b><span>Google</span></div><div className="stat"><b>17+</b><span>opinii</span></div><div className="stat"><b>574</b><span>690 720</span></div></div></div><div className="quote">„Piękne włosy zaczynają się od dobrej rozmowy.”</div></div></section>
+ <section id="uslugi"><div className="wrap"><div className="sectionHead"><div><div className="eyebrow">Oferta</div><h2>Usługi i ceny</h2></div><p>Cennik jest orientacyjny. Ostateczna cena może zależeć od długości, gęstości włosów i zakresu wykonanej usługi.</p></div><div className="cards">{services.map(([n,p],i)=><div className="card" key={n}><span>0{i+1}</span><h3>{n}</h3><div className="price">{p}</div></div>)}</div></div></section>
+ <section id="opinie"><div className="wrap"><div className="sectionHead"><div><div className="eyebrow">Opinie klientek</div><h2>Co mówią o Nanka</h2></div><p>Ocena widoczna w profilu Google: 5,0 na podstawie 17 opinii.</p></div><div className="reviews">{reviews.map(([n,t])=><article className="review" key={n}><div className="stars">★★★★★</div><p>„{t}”</p><b>{n}</b></article>)}</div></div></section>
+ <section id="kontakt"><div className="wrap contact"><div className="contactBox"><div className="eyebrow">Kontakt</div><h2>Wpadnij do nas.</h2><p>Bilczyce 376<br/>32-420 Bilczyce</p><p><a href="tel:574690720">574 690 720</a><br/>Godziny otwarcia: do ustalenia</p><a className="book" href="https://booksy.com/pl-pl/rwg/287305_nanka-hair-studio_fryzjer_10095_gdow" target="_blank">ZAREZERWUJ ONLINE</a></div><div className="map">Bilczyce 376 · 32-420</div></div></section></main>
+ <footer><div className="wrap footerFlex"><span>© {new Date().getFullYear()} Nanka Hair Studio</span><span>Bilczyce 376 · 574 690 720</span></div></footer></>
+}
